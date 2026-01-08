@@ -50,18 +50,27 @@ public class Product implements Comparable<Product> {
     
     @Override
     public boolean equals(Object obj) {
-       
-        throw new UnsupportedOperationException("Not supported yet.");
+
+        if(obj == null){
+            return false;
+        }
+
+        if(this.getClass() != obj.getClass()){
+            return false;
+        }
+
+        return this.identification.equals(((Product) obj).identification);
+
     }
     
     @Override
     public int hashCode() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return identification.hashCode();
     }
 
     @Override
     public int compareTo(Product p) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.identification.compareTo(p.identification);
     }
 
 }
