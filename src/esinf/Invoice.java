@@ -45,18 +45,25 @@ public class Invoice implements Comparable<Invoice> {
 
    @Override
     public boolean equals(Object obj) {
-       
-        throw new UnsupportedOperationException("Not supported yet.");
+       if(obj == null){
+           return false;
+       }
+       if(getClass() != obj.getClass()){
+           return false;
+       }
+
+       return this.reference.equals(((Invoice)obj).getReference());
+
     }
     
     @Override
     public int hashCode() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.reference.hashCode();
     }
 
     @Override
     public int compareTo(Invoice o) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.reference.compareTo(o.getReference());
     }
 
 }
